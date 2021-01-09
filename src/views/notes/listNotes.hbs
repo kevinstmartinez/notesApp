@@ -1,0 +1,27 @@
+<div class="container p-4">
+   <div class="row">
+     {{#each notes}}
+         <div class="col-md-3">
+           <div class="card text-center bg-warning bg-gradient">
+             <div class="card-header">{{title}}</div>
+             <div class="card-body">
+               <p class="m-2">{{content}}</p>
+               <p style="font-size:.7em; color:grey;" class="m-2">{{timeago create_at}}</p>
+               <a href="/notes/edit/{{id}}" class="btn btn-info" style="width: 80px;">Edit</a>
+               <a href="/notes/delete/{{id}}" class="btn btn-danger">Delete</a>
+             </div>
+           </div>
+         </div> 
+         {{else}}
+         <div class="col-md-4 mx-auto">
+           <div class="card text-center">
+             <div class="card-header">Note</div>
+             <div class="card-body">
+               <p>There're not notes</p>
+               <a href="/notes/insert">Create one note</a>
+             </div>
+           </div>
+         </div>
+     {{/each}}
+   </div>
+</div>
