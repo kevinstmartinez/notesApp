@@ -18,7 +18,7 @@ router.post('/insert', helpers.isLogged, async (req, res) =>{
 })
 
 router.get('/', helpers.isLogged, async (req, res) =>{
-  const notes = await pool.query('select * from notesT')
+  const notes = await pool.query('SELECT * FROM notesT')
   res.render('notes/listNotes.hbs', { notes })
 })
 
