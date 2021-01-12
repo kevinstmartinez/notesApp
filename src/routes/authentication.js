@@ -21,8 +21,8 @@ router.post('/signin', passport.authenticate('local.signin', {
   failureRedirect: '/signin'
 }))
 
+res.render('profile')
 router.get('/profile', helpers.isLogged, (req, res) => {
-  res.render('profile')
 })
 
 router.get('/logout', (req, res) =>{
