@@ -11,10 +11,10 @@ const { database } = require('./keys')
 require('./lib/passport')
 
 const app = express()
-app.set('port', process.env.PORT || 3000)
+const port = process.env.PORT || 3000
 
 /* settings */
-app.listen(app.get('port'), ()=>{
+app.listen(port, ()=>{
   console.log(`Listen on port ${port}`)
 })
 app.set('views', path.join(__dirname, 'views'))
